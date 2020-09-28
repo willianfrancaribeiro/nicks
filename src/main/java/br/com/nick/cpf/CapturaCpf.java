@@ -39,16 +39,14 @@ public class CapturaCpf {
 					
 					DomElement button = page.getElementById("bt_gerar_cpf");
 					HtmlPage new_page = button.click();
-					this.wait(400);
+					//this.wait(400);
 					HtmlDivision div = (HtmlDivision)page.getElementById("texto_cpf");
 					String cpf = div.getTextContent();
 					nick_obj.setCpf(cpf);
 					nick_obj.setNick(nick);
 				}catch (FailingHttpStatusCodeException | IOException  | ScriptException e) {
 					System.out.println("erro ao acessar a página");
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
+				} 
 			}
 		return nick_obj;
 	}
